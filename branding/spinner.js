@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     spinner.style.left = "0";
     spinner.style.width = "100%";
     spinner.style.height = "100%";
-    spinner.style.backgroundColor = "rgba(0, 0, 0, 0.9)"; // Dark background
+    spinner.style.backgroundColor = ""; // Dark background
     spinner.style.display = "flex";
     spinner.style.flexDirection = "column";
     spinner.style.justifyContent = "center";
