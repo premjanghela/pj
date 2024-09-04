@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     spinner.style.zIndex = "9999";
     spinner.style.transition = "opacity 0.5s ease-out"; // Smooth transition for hiding
 
+    
     let spinnerIcon = document.createElement("div");
     spinnerIcon.style.border = "8px solid #333";
     spinnerIcon.style.borderTop = "8px solid #3498db"; // Bright blue for contrast
