@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     spinner.style.left = "0";
     spinner.style.width = "100%";
     spinner.style.height = "100%";
-    spinner.style.backgroundColor = ""; // Dark background
+    spinner.style.backgroundColor = "rgba(0, 0, 0, 0.7)"; // Dark translucent background
     spinner.style.display = "flex";
     spinner.style.flexDirection = "column";
     spinner.style.justifyContent = "center";
@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
             100% { transform: rotate(360deg); }
         }
 
+        /* Remove background color for the body */
         body {
-            background-color: #1c1c1c; /* Dark background for the page */
             color: #ffffff; /* White text for contrast */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
