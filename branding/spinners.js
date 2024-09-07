@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         /* Remove background color for the body */
         body {
-            color: #ffffff; /* White text for contrast */
+            color:; /* White text for contrast */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
     `;
