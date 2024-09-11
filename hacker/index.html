@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacker King</title>
+    <title>Devil Hacker King</title>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
@@ -18,7 +18,7 @@
             margin: 0;
             overflow: hidden;
         }
-        .button {
+        .button, .send-button {
             margin: 10px;
             padding: 10px 20px;
             font-size: 16px;
@@ -44,7 +44,7 @@
                 transform: translateX(-10px) translateY(10px);
             }
         }
-        .button:hover {
+        .button:hover, .send-button:hover {
             color: #000000; /* Black text on hover */
         }
         /* Color Styles */
@@ -68,28 +68,97 @@
         .button18 { border-color: #ff0; }
         .button19 { border-color: #f0f; }
         .button20 { border-color: #0ff; }
+
+        /* Processing bar styles */
+        .processing-bar {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 600px;
+        }
+        .progress {
+            height: 10px;
+            background-color: #00ff00;
+            width: 0;
+            transition: width 10s;
+            margin-top: 10px;
+        }
+
+        /* Full-screen overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8) url('https://i.postimg.cc/1tqVk8kC/1067834006-preview.gif') no-repeat center center;
+            background-size: cover;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
-    <a href="wifi-password-hack-pc.devil" download class="button button1">HACK WI-FI PASSWORD RUN</a>
-    <a href="file2.pdf" download class="button button2">Download File 2</a>
-    <a href="file3.pdf" download class="button button3">Download File 3</a>
-    <a href="file4.pdf" download class="button button4">Download File 4</a>
-    <a href="file5.pdf" download class="button button5">Download File 5</a>
-    <a href="file6.pdf" download class="button button6">Download File 6</a>
-    <a href="file7.pdf" download class="button button7">Download File 7</a>
-    <a href="file8.pdf" download class="button button8">Download File 8</a>
-    <a href="file9.pdf" download class="button button9">Download File 9</a>
-    <a href="file10.pdf" download class="button button10">Download File 10</a>
-    <a href="file11.pdf" download class="button button11">Download File 11</a>
-    <a href="file12.pdf" download class="button button12">Download File 12</a>
-    <a href="file13.pdf" download class="button button13">Download File 13</a>
-    <a href="file14.pdf" download class="button button14">Download File 14</a>
-    <a href="file15.pdf" download class="button button15">Download File 15</a>
-    <a href="file16.pdf" download class="button button16">Download File 16</a>
-    <a href="file17.pdf" download class="button button17">Download File 17</a>
-    <a href="file18.pdf" download class="button button18">Download File 18</a>
-    <a href="file19.pdf" download class="button button19">Download File 19</a>
-    <a href="file20.pdf" download class="button button20">Download File 20</a>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="processing-bar" id="processing-bar">
+        Processing... Please wait
+        <div class="progress" id="progress-bar"></div>
+        <button class="send-button" onclick="startProcessing(event)">Send</button>
+    </div>
+
+    <a href="wifi-password-hack-pc.devil" download class="button button1" onclick="startProcessing(event, 'file1.pdf')">WI-FI PASSWORD HACK RUN PC</a>
+    <a href="file2.pdf" download class="button button2" onclick="startProcessing(event, 'file2.pdf')">Download File 2</a>
+    <a href="file3.pdf" download class="button button3" onclick="startProcessing(event, 'file3.pdf')">Download File 3</a>
+    <a href="file4.pdf" download class="button button4" onclick="startProcessing(event, 'file4.pdf')">Download File 4</a>
+    <a href="file5.pdf" download class="button button5" onclick="startProcessing(event, 'file5.pdf')">Download File 5</a>
+    <a href="file6.pdf" download class="button button6" onclick="startProcessing(event, 'file6.pdf')">Download File 6</a>
+    <a href="file7.pdf" download class="button button7" onclick="startProcessing(event, 'file7.pdf')">Download File 7</a>
+    <a href="file8.pdf" download class="button button8" onclick="startProcessing(event, 'file8.pdf')">Download File 8</a>
+    <a href="file9.pdf" download class="button button9" onclick="startProcessing(event, 'file9.pdf')">Download File 9</a>
+    <a href="file10.pdf" download class="button button10" onclick="startProcessing(event, 'file10.pdf')">Download File 10</a>
+    <a href="file11.pdf" download class="button button11" onclick="startProcessing(event, 'file11.pdf')">Download File 11</a>
+    <a href="file12.pdf" download class="button button12" onclick="startProcessing(event, 'file12.pdf')">Download File 12</a>
+    <a href="file13.pdf" download class="button button13" onclick="startProcessing(event, 'file13.pdf')">Download File 13</a>
+    <a href="file14.pdf" download class="button button14" onclick="startProcessing(event, 'file14.pdf')">Download File 14</a>
+    <a href="file15.pdf" download class="button button15" onclick="startProcessing(event, 'file15.pdf')">Download File 15</a>
+    <a href="file16.pdf" download class="button button16" onclick="startProcessing(event, 'file16.pdf')">Download File 16</a>
+    <a href="file17.pdf" download class="button button17" onclick="startProcessing(event, 'file17.pdf')">Download File 17</a>
+    <a href="file18.pdf" download class="button button18" onclick="startProcessing(event, 'file18.pdf')">Download File 18</a>
+    <a href="file19.pdf" download class="button button19" onclick="startProcessing(event, 'file19.pdf')">Download File 19</a>
+    <a href="file20.pdf" download class="button button20" onclick="startProcessing(event, 'file20.pdf')">Download File 20</a>
+
+    <script>
+        function startProcessing(event, fileUrl) {
+            event.preventDefault(); // Prevent default download
+
+            var overlay = document.getElementById('overlay');
+            var processingBar = document.getElementById('processing-bar');
+            var progressBar = document.getElementById('progress-bar');
+
+            // Show overlay and hide processing bar
+            overlay.style.display = 'block';
+            processingBar.style.display = 'none';
+
+            // Set timeout to delay download
+            setTimeout(function() {
+                if (fileUrl) {
+                    // Trigger download
+                    window.location.href = fileUrl;
+                }
+                // Hide overlay
+                overlay.style.display = 'none';
+            }, 10000); // 10 seconds delay
+        }
+    </script>
 </body>
-</html>
+    </html>
